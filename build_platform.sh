@@ -44,12 +44,12 @@ function build_platform {
     cp ../build_platform/linux/components/$LIB_NAME xpi/components
     cp ../build_platform/linux64/components/$LIB_NAME xpi/components/libnstidy64.so
     cp ../build_platform/linux/components/nstidy.xpt xpi/components
-    chmod 777 xpi/components/libnstidy64.so
+    chmod 755 xpi/components/libnstidy64.so
   else
     cp ../build_platform/$1/components/$LIB_NAME xpi/components
     cp ../build_platform/$1/components/nstidy.xpt xpi/components
   fi
-  chmod 777 xpi/components/$LIB_NAME
+  chmod 755 xpi/components/$LIB_NAME
   
   cat chrome.manifest | sed -e "s/nstidy.dll/$LIB_NAME/" > xpi/chrome.manifest
   
